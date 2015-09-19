@@ -1,6 +1,5 @@
-MyWeb
-=====
+# MyWeb
 
-My web located at kache.com.ar
+My web located at http://kache.com.ar
 
-The original project was taken from http://purecss.io/layouts/
+This project is based on http://purecss.io/layouts/
