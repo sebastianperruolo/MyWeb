@@ -4,16 +4,17 @@ Everywhere it says that to go back to original disk partition you can "Recover y
 
 What did worked for me? I run some commands to invert the changes that "ChrUbuntu's installation script" made.
 
-The ChrUbuntu's script added new partitions by running the following commands:
-> # the original partition is changed to be smaller
-> cgpt add -i 1 -b $stateful_start -s $stateful_size -l STATE ${target_disk}
-> 
-> # this creates a new partition called "kernc"
-> cgpt add -i 6 -b $kernc_start -s $kernc_size -l KERN-C ${target_disk}
-> 
-> # this creates a new partition called "rootc"
-> cgpt add -i 7 -b $rootc_start -s $rootc_size -l ROOT-C ${target_disk}
-
+The [ChrUbuntu's script](http://goo.gl/9sgchs) added new partitions by running the following commands:
+```
+# the original partition is changed to be smaller
+cgpt add -i 1 -b $stateful_start -s $stateful_size -l STATE ${target_disk}
+ 
+# this creates a new partition called "kernc"
+cgpt add -i 6 -b $kernc_start -s $kernc_size -l KERN-C ${target_disk}
+ 
+# this creates a new partition called "rootc"
+cgpt add -i 7 -b $rootc_start -s $rootc_size -l ROOT-C ${target_disk}
+```
 
 So, I deleted *kernc* and *rootc* partition. Then I restored the #1 partition to its original state. This is what I did: 
 
